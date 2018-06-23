@@ -20,10 +20,10 @@ Hive components
                     It eventually generates an execution plan with the help of the table and partition metadata looked 
                     up from the metastoremetastore.
                     
-        7.Compiler: The compiler parses the query does semantic analysis on the different query blocks and query expressions. 
-                    It eventually generates an execution plan with the help of the table and partition metadata looked up from
-                    metastoremetastore.
-                    
+        7.Execution Engine: This component executes the execution plan created by the compiler. The plan has a DAG of stages.
+                            The engine manages the dependencies between these different stages of the plan. It executes these stages on the associated
+                            system components.
+                            
         8.Metastore: This component stores all the structure information of the various table and partitions in the warehouse. 
                      It includes column and column type information, the serializers and deserializers (also called SerDe) necessary to read and
                      write data and the corresponding hdfs files where the data is stored.
