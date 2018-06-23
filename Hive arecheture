@@ -1,0 +1,41 @@
+Hive archecture 
+
+Hive Consists of Mainly 3 core parts. That is as follow.
+
+        a)Hive Clients
+       b) Hive Services
+       c) Hive Storage and Computing
+       
+       
+       
+       Hive clients: 
+       
+       Hive provides different drivers for communication with a different type of applications. For Thrift based applications,
+       it will provide Thrift client for communication.For Java related applications, it provides JDBC Drivers. Other than any type of applications 
+       provided ODBC drivers. These Clients and drivers in turn again communicate with Hive server in the Hive services.
+      
+       Hive Services:
+
+            Client interactions with Hive can be performed through Hive Services. If the client wants to perform any query
+            related operations in Hive, it has to communicate through Hive Services.CLI is the command line interface acts 
+            as Hive service for DDL (Data definition Language) operations.All drivers communicate with Hive server and to 
+            the main driver in Hive services as shown in above architecture diagram.Driver present in the Hive services represents
+            the main driver, and it communicates all type of JDBC, ODBC, and other client specific applications. Driver will process
+            those requests from different applications to meta store and field systems for further processing.
+
+          
+      Hive Storage and Computing:
+
+             Hive services such as Meta store, File system, and Job Client in turn communicates with Hive storage and performs the
+             following actions:
+                   1)  Metadata information of tables created in Hive is stored in Hive "Meta storage database".
+                   2)  Query results and data loaded in the tables are going to be stored in Hadoop cluster on HDFS.
+             
+
+
+
+
+
+ 
+
+
